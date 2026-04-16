@@ -23,3 +23,11 @@ class Student(models.Model):
 
     def __str__(self):
         return self.student_no
+    
+class WorkPlaceSupervisor(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    company_name = models.CharField(max_length=35)
+    industry = models.CharField(max_length=25)
+
+    def __str__(self):
+        return self.user.username
