@@ -31,3 +31,10 @@ class WorkPlaceSupervisor(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+class AcademicSupervisor(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    department = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.user.username
